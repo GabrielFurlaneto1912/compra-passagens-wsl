@@ -2,7 +2,18 @@
 
 import Link from "next/link";
 
-const viagens = [
+type Viagem = {
+  id: number;
+  imagem: string;
+  origem: string;
+  destino: string;
+  duracao: string;
+  partida: string;
+  classes: string;
+  preco: number;
+};
+
+const viagens: Viagem[] = [
   {
     id: 1,
     imagem: "/images/magnific-new-york.jpg",
@@ -13,6 +24,7 @@ const viagens = [
     classes: "1ª · 2ª · 3ª",
     preco: 870,
   },
+
   {
     id: 2,
     imagem: "/images/magnific-rio.jpg",
@@ -23,6 +35,7 @@ const viagens = [
     classes: "1ª · 2ª · 3ª",
     preco: 1200,
   },
+
   {
     id: 3,
     imagem: "/images/magnific-lisboa.jpg",
@@ -35,7 +48,7 @@ const viagens = [
   },
 ];
 
-export default function Viagens() {
+export default function ViagensPage() {
   return (
     <main className="viagens-page">
 
@@ -44,6 +57,7 @@ export default function Viagens() {
       <header className="navbar">
 
         <div className="logo">
+
           <span className="logo-small">
             WHITE STAR LINE
           </span>
@@ -51,17 +65,38 @@ export default function Viagens() {
           <span className="logo-main">
             MAGNIFIC
           </span>
+
         </div>
 
         <nav className="nav-menu">
-          <Link href="/">Início</Link>
-          <Link href="/comprar">Comprar Passagem</Link>
-          <Link href="/viagens" className="active">
+
+          <Link href="/">
+            Início
+          </Link>
+
+          <Link href="/comprar">
+            Comprar Passagem
+          </Link>
+
+          <Link
+            href="/viagens"
+            className="active"
+          >
             Viagens
           </Link>
-          <Link href="/primeira-classe">1ª Classe</Link>
-          <Link href="/segunda-classe">2ª Classe</Link>
-          <Link href="/terceira-classe">3ª Classe</Link>
+
+          <Link href="/primeira-classe">
+            1ª Classe
+          </Link>
+
+          <Link href="/segunda-classe">
+            2ª Classe
+          </Link>
+
+          <Link href="/terceira-classe">
+            3ª Classe
+          </Link>
+
         </nav>
 
       </header>
@@ -79,7 +114,7 @@ export default function Viagens() {
           Viagens
         </h1>
 
-        <div className="gold-line"></div>
+        <div className="gold-line" />
 
         <p>
           Escolha seu próximo destino a bordo do RMS Magnific.
@@ -105,7 +140,7 @@ export default function Viagens() {
                 className="travel-image"
                 style={{
                   backgroundImage:
-                    `url('${viagem.imagem}')`,
+                    `url("${viagem.imagem}")`,
                 }}
               />
 
@@ -124,21 +159,37 @@ export default function Viagens() {
                 <div className="travel-info">
 
                   <div>
-                    <span>DURAÇÃO</span>
-                    <strong>{viagem.duracao}</strong>
+                    <span>
+                      DURAÇÃO
+                    </span>
+
+                    <strong>
+                      {viagem.duracao}
+                    </strong>
                   </div>
 
                   <div>
-                    <span>PARTIDA</span>
-                    <strong>{viagem.partida}</strong>
+                    <span>
+                      PARTIDA
+                    </span>
+
+                    <strong>
+                      {viagem.partida}
+                    </strong>
                   </div>
 
                   <div>
-                    <span>CLASSES</span>
-                    <strong>{viagem.classes}</strong>
+                    <span>
+                      CLASSES
+                    </span>
+
+                    <strong>
+                      {viagem.classes}
+                    </strong>
                   </div>
 
                 </div>
+
 
                 <div className="travel-price">
 
@@ -151,6 +202,7 @@ export default function Viagens() {
                   </strong>
 
                 </div>
+
 
                 <Link
                   href={`/comprar?viagem=${viagem.id}`}

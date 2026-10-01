@@ -1,172 +1,306 @@
-import "./globals.css";
+"use client";
 
-function Home() {
+import Link from "next/link";
+
+export default function Home() {
   return (
-    <div className="home">
+    <main>
 
-      {/* MENU */}
+      {/* ================= NAVBAR ================= */}
+
       <header className="navbar">
+
         <div className="logo">
-          <span className="logo-small">WHITE STAR LINE</span>
-          <span className="logo-main">MAGNIFIC</span>
+          <span className="logo-small">
+            WHITE STAR LINE
+          </span>
+
+          <span className="logo-main">
+            MAGNIFIC
+          </span>
         </div>
 
-        <nav>
-          <a href="/">Início</a>
-          <a href="/comprar">Comprar Passagem</a>
-          <a href="/viagens">Viagens</a>
-          <a href="/primeira-classe">1ª Classe</a>
-          <a href="/segunda-classe">2ª Classe</a>
-          <a href="/terceira-classe">3ª Classe</a>
+        <nav className="nav-menu">
+          <Link href="/" className="active">
+            Início
+          </Link>
+
+          <Link href="/comprar">
+            Comprar Passagem
+          </Link>
+
+          <Link href="/viagens">
+            Viagens
+          </Link>
+
+          <Link href="/primeira-classe">
+            1ª Classe
+          </Link>
+
+          <Link href="/segunda-classe">
+            2ª Classe
+          </Link>
+
+          <Link href="/terceira-classe">
+            3ª Classe
+          </Link>
         </nav>
+
       </header>
 
 
-      {/* HERO */}
+      {/* ================= HERO ================= */}
+
       <section className="hero">
 
-        {/* Coloque aqui a foto principal do RMS Magnific */}
-        <div className="hero-image">
-          <div className="hero-placeholder">
-            <span>FOTO DO RMS MAGNIFIC</span>
-          </div>
-        </div>
+        <div
+          className="hero-image"
+          style={{
+            backgroundImage:
+              "url('/images/magnific-hero.jpg')",
+          }}
+        />
+
+        <div className="hero-overlay" />
 
         <div className="hero-content">
-          <p className="hero-subtitle">
+
+          <span className="hero-company">
             WHITE STAR LINE
-          </p>
+          </span>
 
-          <h1>RMS MAGNIFIC</h1>
+          <h1>
+            RMS MAGNIFIC
+          </h1>
 
-          <div className="gold-line"></div>
+          <div className="gold-line" />
 
           <p>
             A grandeza dos mares começa aqui.
           </p>
 
-          <a href="/comprar" className="main-button">
+          <Link
+            href="/comprar"
+            className="gold-button"
+          >
             COMPRAR PASSAGEM
-          </a>
+          </Link>
+
         </div>
 
       </section>
 
 
-      {/* HISTÓRIA */}
+      {/* ================= HISTÓRIA ================= */}
+
       <section className="history">
 
-        <div className="section-title">
-          <span>NOSSA HISTÓRIA</span>
-          <h2>Uma tradição pelos mares</h2>
-          <div className="gold-line"></div>
+        <div className="section-header">
+
+          <span>
+            NOSSA HISTÓRIA
+          </span>
+
+          <h2>
+            Uma tradição pelos mares
+          </h2>
+
+          <div className="gold-line" />
+
         </div>
 
         <div className="history-content">
 
-          <div className="history-text">
-            <p>
-              Há décadas, nossa companhia atravessa os oceanos,
-              levando passageiros a novos destinos e transformando
-              cada viagem em uma experiência inesquecível.
-            </p>
+          <p>
+            Há décadas, nossa companhia atravessa os oceanos,
+            levando passageiros a novos destinos e transformando
+            cada viagem em uma experiência inesquecível.
+          </p>
 
-            <p>
-              De nossos primeiros navios ao grandioso RMS Magnific,
-              nossa história é construída sobre inovação, elegância
-              e o espírito de aventura que sempre acompanhou as
-              grandes viagens marítimas.
-            </p>
+          <p>
+            De nossos primeiros navios ao grandioso
+            <strong> RMS Magnific</strong>, nossa história é
+            construída sobre inovação, elegância e o espírito
+            de aventura que sempre acompanhou as grandes
+            viagens marítimas.
+          </p>
 
-            <p>
-              Hoje, o Magnific representa o ápice dessa tradição:
-              um navio criado para unir conforto, luxo e a emoção
-              de atravessar o oceano.
-            </p>
-          </div>
+          <p>
+            Hoje, o Magnific representa o ápice dessa tradição:
+            um navio criado para unir conforto, luxo e a emoção
+            de atravessar o oceano.
+          </p>
 
         </div>
 
       </section>
 
 
-      {/* NAVIOS ANTERIORES */}
-      <section className="ships">
+      {/* ================= FROTA ================= */}
 
-        <div className="section-title">
-          <span>NOSSA FROTA</span>
-          <h2>Uma história construída pelos mares</h2>
-          <div className="gold-line"></div>
+      <section className="fleet">
+
+        <div className="section-header">
+
+          <span>
+            NOSSA FROTA
+          </span>
+
+          <h2>
+            Uma história construída pelos mares
+          </h2>
+
+          <div className="gold-line" />
+
         </div>
+
 
         <div className="ships-grid">
 
-          <div className="ship-card">
-            <div className="ship-image">
-              <span>FOTO DO NAVIO</span>
+          <article className="ship-card">
+
+            <div
+              className="ship-image"
+              style={{
+                backgroundImage:
+                  "url('/images/magnific-olympic.jpg')",
+              }}
+            />
+
+            <div className="ship-info">
+
+              <span>
+                1969 - 1974
+              </span>
+
+              <h3>
+                HMS Olimpic
+              </h3>
+
+              <p>
+                O início de uma grande tradição marítima.
+              </p>
+
             </div>
 
-            <h3>O Primeiro</h3>
-            <p>
-              O início de uma tradição marítima.
-            </p>
-          </div>
+          </article>
 
 
-          <div className="ship-card">
-            <div className="ship-image">
-              <span>FOTO DO NAVIO</span>
+          <article className="ship-card">
+
+            <div
+              className="ship-image"
+              style={{
+                backgroundImage:
+                  "url('/images/magnific-magestic.jpg')",
+              }}
+            />
+
+            <div className="ship-info">
+
+              <span>
+                1018 - 2022
+              </span>
+
+              <h3>
+                RMS Magestic
+              </h3>
+
+              <p>
+                Um novo capítulo na história da companhia.
+              </p>
+
             </div>
 
-            <h3>Uma Nova Era</h3>
-            <p>
-              Um novo capítulo na história da companhia.
-            </p>
-          </div>
+          </article>
 
 
-          <div className="ship-card">
-            <div className="ship-image">
-              <span>FOTO DO NAVIO</span>
+          <article className="ship-card">
+
+            <div
+              className="ship-image"
+              style={{
+                backgroundImage:
+                  "url('/images/magnific-celestic.jpg')",
+              }}
+            />
+
+            <div className="ship-info">
+
+              <span>
+                2023 - 2026
+              </span>
+
+              <h3>
+                RMS Celestic
+              </h3>
+
+              <p>
+                Um navio que levou nossa companhia além
+                dos horizontes.
+              </p>
+
             </div>
 
-            <h3>O Grande Navegador</h3>
-            <p>
-              Um navio que levou nossa companhia além dos horizontes.
-            </p>
-          </div>
+          </article>
 
 
-          <div className="ship-card magnific-card">
-            <div className="ship-image">
-              <span>FOTO DO RMS MAGNIFIC</span>
+          <article className="ship-card featured-ship">
+
+            <div
+              className="ship-image"
+              style={{
+                backgroundImage:
+                  "url('/images/magnific.jpg')",
+              }}
+            />
+
+            <div className="ship-info">
+
+              <span>
+                2027
+              </span>
+
+              <h3>
+                RMS Magnific
+              </h3>
+
+              <p>
+                O ápice da nossa história marítima.
+              </p>
+
             </div>
 
-            <h3>RMS Magnific</h3>
-            <p>
-              O ápice da nossa história marítima.
-            </p>
-          </div>
+          </article>
 
         </div>
 
       </section>
 
 
-      {/* MAGNIFIC */}
+      {/* ================= MAGNIFIC ================= */}
+
       <section className="magnific">
 
-        <div className="magnific-image">
-          <span>FOTO DO RMS MAGNIFIC</span>
-        </div>
+        <div
+          className="magnific-photo"
+          style={{
+            backgroundImage:
+              "url('/images/magnific.jpg')",
+          }}
+        />
 
         <div className="magnific-content">
 
-          <span>O ORGULHO DA COMPANHIA</span>
+          <span className="small-title">
+            O ORGULHO DA COMPANHIA
+          </span>
 
-          <h2>RMS Magnific</h2>
+          <h2>
+            RMS Magnific
+          </h2>
 
-          <div className="gold-line"></div>
+          <div className="gold-line left" />
 
           <p>
             O maior navio já construído pela companhia.
@@ -174,97 +308,188 @@ function Home() {
 
           <p>
             Projetado para proporcionar uma experiência
-            extraordinária em alto-mar, o RMS Magnific reúne
-            elegância, conforto e grandiosidade em cada detalhe.
+            extraordinária em alto-mar, o RMS Magnific
+            reúne elegância, conforto e grandiosidade
+            em cada detalhe.
           </p>
 
-          <a href="/viagens" className="outline-button">
+          <Link
+            href="/viagens"
+            className="outline-button"
+          >
             CONHEÇA AS VIAGENS
-          </a>
+          </Link>
 
         </div>
 
       </section>
 
 
-      {/* CLASSES */}
+      {/* ================= CLASSES ================= */}
+
       <section className="classes">
 
-        <div className="section-title">
-          <span>EXPERIÊNCIA A BORDO</span>
-          <h2>Escolha sua classe</h2>
-          <div className="gold-line"></div>
+        <div className="section-header">
+
+          <span>
+            EXPERIÊNCIA A BORDO
+          </span>
+
+          <h2>
+            Escolha sua classe
+          </h2>
+
+          <div className="gold-line" />
+
         </div>
+
 
         <div className="classes-grid">
 
-          <a href="/primeira-classe" className="class-card">
-            <div className="class-number">I</div>
-            <h3>1ª Classe</h3>
+          <Link
+            href="/primeira-classe"
+            className="class-card"
+          >
+
+            <span className="class-number">
+              I
+            </span>
+
+            <h3>
+              1ª Classe
+            </h3>
+
             <p>
-              Elegância, conforto e serviços exclusivos.
+              Elegância, conforto e serviços exclusivos
+              para uma experiência extraordinária.
             </p>
-            <span>CONHECER →</span>
-          </a>
+
+            <span className="class-link">
+              CONHECER →
+            </span>
+
+          </Link>
 
 
-          <a href="/segunda-classe" className="class-card">
-            <div className="class-number">II</div>
-            <h3>2ª Classe</h3>
+          <Link
+            href="/segunda-classe"
+            className="class-card"
+          >
+
+            <span className="class-number">
+              II
+            </span>
+
+            <h3>
+              2ª Classe
+            </h3>
+
             <p>
-              Conforto e qualidade para sua viagem.
+              Conforto e qualidade para tornar sua
+              travessia inesquecível.
             </p>
-            <span>CONHECER →</span>
-          </a>
+
+            <span className="class-link">
+              CONHECER →
+            </span>
+
+          </Link>
 
 
-          <a href="/terceira-classe" className="class-card">
-            <div className="class-number">III</div>
-            <h3>3ª Classe</h3>
+          <Link
+            href="/terceira-classe"
+            className="class-card"
+          >
+
+            <span className="class-number">
+              III
+            </span>
+
+            <h3>
+              3ª Classe
+            </h3>
+
             <p>
-              Uma viagem inesquecível para todos.
+              Uma oportunidade de atravessar o oceano
+              e viver uma grande aventura.
             </p>
-            <span>CONHECER →</span>
-          </a>
+
+            <span className="class-link">
+              CONHECER →
+            </span>
+
+          </Link>
 
         </div>
 
       </section>
 
 
-      {/* RESERVA */}
+      {/* ================= RESERVA ================= */}
+
       <section className="reservation">
 
-        <div>
-          <span>PRONTO PARA EMBARCAR?</span>
+        <div className="reservation-content">
+
+          <span>
+            PRONTO PARA EMBARCAR?
+          </span>
 
           <h2>
             Sua próxima grande viagem
             começa aqui.
           </h2>
 
-          <a href="/comprar" className="main-button">
+          <Link
+            href="/comprar"
+            className="gold-button"
+          >
             COMPRAR PASSAGEM
-          </a>
+          </Link>
+
         </div>
 
       </section>
 
 
-      {/* RODAPÉ */}
+      {/* ================= FOOTER ================= */}
+
       <footer className="footer">
 
         <div className="footer-logo">
-          <span>WHITE STAR LINE</span>
-          <strong>RMS MAGNIFIC</strong>
+
+          <span>
+            WHITE STAR LINE
+          </span>
+
+          <strong>
+            RMS MAGNIFIC
+          </strong>
+
         </div>
 
         <div className="footer-links">
-          <a href="/comprar">Comprar Passagem</a>
-          <a href="/viagens">Viagens</a>
-          <a href="/primeira-classe">1ª Classe</a>
-          <a href="/segunda-classe">2ª Classe</a>
-          <a href="/terceira-classe">3ª Classe</a>
+
+          <Link href="/comprar">
+            Comprar Passagem
+          </Link>
+
+          <Link href="/viagens">
+            Viagens
+          </Link>
+
+          <Link href="/primeira-classe">
+            1ª Classe
+          </Link>
+
+          <Link href="/segunda-classe">
+            2ª Classe
+          </Link>
+
+          <Link href="/terceira-classe">
+            3ª Classe
+          </Link>
+
         </div>
 
         <p>
@@ -273,8 +498,6 @@ function Home() {
 
       </footer>
 
-    </div>
+    </main>
   );
 }
-
-export default Home;
